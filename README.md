@@ -1,6 +1,3 @@
-==============================================================
-
-PROCEDURE BY SUNIL VASU
 
 3 Master 2 Infra 3 app node installation:
 
@@ -21,5 +18,3 @@ PROCEDURE BY SUNIL VASU
 --> Execute "oc adm policy add-cluster-role-to-user cluster-admin <USERNAME>"
 
 --> To login "oc login -u <USERNAME> -p <PASSWORD> https://console.$DOMAIN:$API_PORT"
-
-=============================================================
