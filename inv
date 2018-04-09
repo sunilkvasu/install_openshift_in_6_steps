@@ -35,7 +35,7 @@ ocpapp03.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node
 ocpapp04.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
 
 [bastion_node]
-ocpbastion.example.com
+ocpbastion01.example.com
 
 [OSEv3:vars]
 ansible_ssh_user=root
