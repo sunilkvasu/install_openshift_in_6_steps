@@ -1,5 +1,27 @@
 
 3 Master 2 Infra 3 app node installation:
+Requirements:
+ocpapp01.example.com, 4 CPU, 16GB RAM, 50GB Disk
+ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
+ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
+
+ocpinfra01.example.com, 4 CPU, 8GB RAM, 50GB Disk
+ocpinfra02.example.com, 4 CPU, 8GB RAM, 50GB Disk
+
+ocpmaster01.example.com, 4 CPU, 8GB RAM, 50GB Disk
+ocpmaster02.example.com, 4 CPU, 8GB RAM, 50GB Disk
+ocpmaster03.example.com, 4 CPU, 8GB RAM, 50GB Disk
+
+ocpbastion01.example.com, 4 CPU, 4GB RAM, 50GB Disk
+
+
+Configure passwordless authnetication:
+On ocpbastion01.example.com
+ssh-keygen
+ssh-copy-id <hosts>
+  
+  
+  Run the playbooks:
 
 --> Use Inventory file "inv"
 
