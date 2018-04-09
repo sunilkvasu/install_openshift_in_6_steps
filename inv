@@ -14,25 +14,28 @@ infra_nodes
 app_nodes
 
 [masters]
-ocpmaster01.dcra.lab openshift_ip=10.154.129.144 openshift_schedulable=false 
-ocpmaster02.dcra.lab openshift_ip=10.154.129.142 openshift_schedulable=false 
-ocpmaster03.dcra.lab openshift_ip=10.154.129.102 openshift_schedulable=false 
+ocpmaster01.example.com openshift_ip=<IP> openshift_schedulable=false 
+ocpmaster02.example.com openshift_ip=<IP> openshift_schedulable=false 
+ocpmaster03.example.com openshift_ip=<IP> openshift_schedulable=false 
 
 #[new_masters]
-#ocpmaster04.dcra.lab openshift_ip=10.154.129.145 openshift_schedulable=false openshift_deployment_type=origin ansible_ssh_user=root os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
+#ocpmaster04.example.com openshift_ip=<IP> openshift_schedulable=false openshift_deployment_type=origin ansible_ssh_user=root os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
 
 [infra_nodes]
-ocpinfra01.dcra.lab openshift_ip=10.154.129.140 openshift_node_labels='{"region": "infra", "zone": "default"}'
-ocpinfra02.dcra.lab openshift_ip=10.154.129.141 openshift_node_labels='{"region": "infra", "zone": "default"}'
+ocpinfra01.example.com openshift_ip=<IP> openshift_node_labels='{"region": "infra", "zone": "default"}'
+ocpinfra02.example.com openshift_ip=<IP> openshift_node_labels='{"region": "infra", "zone": "default"}'
 
 [app_nodes]
-ocpapp01.dcra.lab openshift_ip=10.154.129.139 openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
-ocpapp02.dcra.lab openshift_ip=10.154.129.138 openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
-ocpapp03.dcra.lab openshift_ip=10.154.129.137 openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+ocpapp01.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+ocpapp02.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+ocpapp03.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
 
 [new_nodes]
-#ocpmaster04.dcra.lab
-ocpapp04.dcra.lab openshift_ip=10.154.129.148 openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+#ocpmaster04.example.com
+ocpapp04.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+
+[bastion_node]
+ocpbastion.example.com
 
 [OSEv3:vars]
 ansible_ssh_user=root
@@ -60,9 +63,9 @@ openshift_metrics_image_version=v3.7.1
 
 osm_use_cockpit=true
 osm_cluster_network_cidr=10.1.0.0/16
-openshift_http_proxy=http://10.115.48.75:8888
-openshift_https_proxy=http://10.115.48.75:8888
-openshift_no_proxy='.dcra.lab,.local,10.0.2.' 
+openshift_http_proxy=http://<PROXY_SERVER>:PORT
+openshift_https_proxy=http://<PROXY_SERVER>:PORT
+openshift_no_proxy='.example.com,.local,10.0.2.' 
 
 
 openshift_metrics_install_metrics=False
@@ -70,5 +73,5 @@ openshift_logging_install_logging=False
 
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
 
-openshift_public_hostname=console.10.154.129.128.nip.io
-openshift_master_default_subdomain=apps.10.154.129.128.nip.io
+openshift_public_hostname=console.<HA_PROXY>.nip.io
+openshift_master_default_subdomain=apps.<HA_PROXY>.nip.io

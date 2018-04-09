@@ -9,6 +9,6 @@ spec:
   - ReadWriteOnce 
   nfs: 
     path: /nfs
-    server: 10.154.129.143
+    server: <NFS_SERVER_IP>
   persistentVolumeReclaimPolicy: Recycle
 
