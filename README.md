@@ -6,6 +6,8 @@ PROCEDURE BY SUNIL VASU
 
 --> Use Inventory file "inv"
 
+--> Configure HA Proxy on the bastion node: run configure_haproxy.yaml playbook
+
 --> run pre install playbook "install-pre-openshift.yaml" for all hosts in the inventory
 
 --> Clone openshift repository: git clone https://github.com/openshift/openshift-ansible.git
