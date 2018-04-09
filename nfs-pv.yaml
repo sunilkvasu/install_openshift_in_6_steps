@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
+spec:
+  capacity:
+    storage: 1Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /nfs
+    server: 10.154.129.143
+  persistentVolumeReclaimPolicy: Recycle
+

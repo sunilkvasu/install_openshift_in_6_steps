@@ -1,0 +1,50 @@
+---
+- name: Prepare Openshift Infrastructure
+  hosts: all
+  vars:
+  tasks:
+  - name: Install EPEL repository
+    yum:
+      name: epel-release
+      state: latest
+  - name: Install additional packages
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+    - git
+    - wget
+    - zile
+    - nano
+    - net-tools
+    - docker
+    - python-cryptography
+    - pyOpenSSL.x86_64
+    - python2-pip
+    - openssl-devel
+    - python-devel
+    - httpd-tools
+    - NetworkManager
+    - python-passlib
+    - java-1.8.0-openjdk-headless
+    - "@Development Tools"
+  - name: Start NetworkManager
+    service:
+      name: NetworkManager
+      state: started
+      enabled: yes
+  - name: Install Ansible
+    yum:
+      name: ansible
+      state: latest
+    #shell: 'pip install -Iv ansible'
+  - name: Restart Docker
+    service:
+      name: docker
+      state: started
+      enabled: yes
+     
+
+
+
+  

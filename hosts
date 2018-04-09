@@ -1,0 +1,23 @@
+[nodes]
+#10.154.129.102	ocpmaster03.dcra.lab
+#10.154.129.142	ocpmaster02.dcra.lab
+#10.154.129.144	ocpmaster01.dcra.lab
+#10.154.129.141	ocpinfra02.dcra.lab
+#10.154.129.140	ocpinfra01.dcra.lab
+#10.154.129.143	ocpbastion.dcra.lab
+#10.154.129.137	ocpapp03.dcra.lab
+#10.154.129.138	ocpapp02.dcra.lab
+#10.154.129.139	ocpapp01.dcra.lab
+#10.154.129.145	ocpmaster04.dcra.lab
+#10.154.129.148 ocpapp04.dcra.lab
+ocpmaster03.dcra.lab
+ocpmaster02.dcra.lab
+ocpmaster01.dcra.lab
+ocpinfra02.dcra.lab
+ocpinfra01.dcra.lab
+ocpbastion01.dcra.lab
+ocpapp03.dcra.lab
+ocpapp02.dcra.lab
+ocpapp01.dcra.lab
+ocpmaster04.dcra.lab
+ocpapp04.dcra.lab

@@ -1,0 +1,724 @@
+    1  cd /etc/sshd
+    2  ls
+    3  cd /etc/ssh
+    4  ls
+    5  ls -alrt
+    6  vi sshd_config 
+    7  service sshd restart
+    8  vi sshd_config 
+    9  ssh localhost
+   10  ip a
+   11  hostnamectl set-hostname ocpbastion.dcra.lab
+   12  hostnamectl set-hostname ocpbastion01.dcra.lab
+   13  ssh 10.154.129.102
+   14  ssh ocpmaster03.dcra.lab
+   15  ssh ocpmaster02.dcra.lab
+   16  ssh ocpmaster01.dcra.lab
+   17  ls
+   18  ssh cht100.lsdc.ch.pmi
+   19  ls
+   20  scp cht100.lsdc.ch.pmi:/u/a-svasu/openshift/* openshift
+   21  ls
+   22  ls -l
+   23  rm -rf openshift 
+   24  mkdir openshift
+   25  cd openshift/
+   26  scp -r cht100.lsdc.ch.pmi:/u/a-svasu/openshift/* .
+   27  ls
+   28  yum install git
+   29  git clone https://github.com/gshipley/installcentos.git
+   30  ssh ocpbast01
+   31  vi /etc/profile
+   32  ip a
+   33  ssh ocpmaster01
+   34  ssh ocpmaster01.dcra.lab
+   35  ssh ocpmaster01
+   36  ssh ocpmaster01.dcra.lab
+   37  ssh 10.154.129.102
+   38  cd openshift/
+   39  ls
+   40  git clone https://github.com/gshipley/installcentos.git
+   41  ls
+   42  cd installcentos/
+   43  ls
+   44  cat install-openshift.sh 
+   45  yum install -y epel-release
+   46  yum install -y git wget zile nano net-tools docker python-cryptography pyOpenSSL.x86_64 python2-pip openssl-devel python-devel httpd-tools NetworkManager python-passlib java-1.8.0-openjdk-headless "@Development Tools"
+   47  cat install-openshift.sh 
+   48  systemctl start NetworkManager
+   49  systemctl enable NetworkManager
+   50   pip install -Iv ansible
+   51  cat install-openshift.sh 
+   52  systemctl restart docker
+   53  systemctl enable docker
+   54  history 
+   55  ls
+   56  vi hosts
+   57  ssh ocpmaster01
+   58  nslookup ocpmaster01
+   59  yum provides */nslookup
+   60  yum install bind-utils-9.9.4-50.el7.x86_64
+   61  nslookup ocpmaster01
+   62  ssh ocpmaster01
+   63  ls
+   64  cat install-openshift.sh 
+   65  export METRICS="True"
+   66  export LOGGING="True"
+   67  ls
+   68  git clone https://github.com/openshift/openshift-ansible.git
+   69  cd openshift-ansible && git fetch && git checkout release-3.7 && cd ..
+   70  ls /root/openshift/inventory.ini.good 
+   71  cat /root/openshift/inventory.ini.good 
+   72  ansible
+   73  ls /etc/ansible
+   74  ls
+   75  cd ../inventory.ini.good .
+   76  ls
+   77  cp ../inventory.ini.good .
+   78  ls
+   79  cat inventory.ini.good 
+   80  cp inventory.ini.good hosts
+   81  cp inventory.ini.good inv
+   82  ls
+   83  ssh-keygen 
+   84  cat hosts 
+   85  ssh-copy-id 10.154.129.102
+   86  ssh-copy-id 10.154.129.142
+   87  ssh-copy-id 10.154.129.144
+   88  ssh-copy-id 10.154.129.141
+   89  ssh-copy-id 10.154.129.140
+   90  ssh-copy-id 10.154.129.143
+   91  ssh-copy-id 10.154.129.137
+   92  ssh-copy-id 10.154.129.138
+   93  ssh-copy-id 10.154.129.139
+   94  ssh 10.154.129.138
+   95  hostname
+   96  ssh ocpmaster01 hostname
+   97  cat hosts 
+   98  ssh 10.154.129.102 hostname
+   99  ssh 10.154.129.142 hostname
+  100  ssh 10.154.129.144 hostname
+  101  ssh 10.154.129.141 hostname
+  102  ssh 10.154.129.140 hostname
+  103  ssh 10.154.129.143 hostname
+  104  ssh 10.154.129.137 hostname
+  105  ssh 10.154.129.138 hostname
+  106  ssh 10.154.129.139 hostname
+  107  ls
+  108  nslookup ocpmaster01
+  109  ssh 10.154.129.144
+  110  nslookup ocpmaster02
+  111  nslookup ocpmaster03
+  112  nslookup ocpmaster04
+  113  nslookup ocpmaster04
+  114  ssh ocpmaster04
+  115  ssh ocpmaster03
+  116  ssh ocpmaster02
+  117  ls
+  118  cat hosts
+  119  ssh 10.154.129.102
+  120  ssh 10.154.129.142
+  121  ssh 10.154.129.144
+  122  ssh ocpmaster01
+  123  nslookup ocpmaster01
+  124  ssh ocpmaster01
+  125  ssh 10.154.129.144
+  126  cat host
+  127  cat hosts
+  128  ssh 10.154.129.137
+  129  ls
+  130  cat inv
+  131  ip a
+  132  yum install haproxy
+  133  ssh ocpbast01
+  134  vi /etc/haproxy/haproxy.cfg 
+  135  systemctl restart haproxy
+  136  systemctl status haproxy
+  137  nslookup ocpbastion01
+  138  ip a
+  139  ls
+  140  cat inv
+  141  ls
+  142  cat inventory.ini
+  143  cat hosts
+  144  vi inv
+  145  ssh 10.154.129.144
+  146  cat inv
+  147  ssh 10.154.129.102
+  148  ansible -i inv -a "hostname"
+  149  ansible -i inv all -a "hostname"
+  150  ssh ocpapp02
+  151  ssh ocpapp03
+  152  nslookup ocpapp02
+  153  ansible -i inv all -a "hostname"
+  154  ssh ocpapp03.dcra.lab
+  155  nslookup ocpapp03.dcra.lab
+  156  nslookup ocpapp02.dcra.lab
+  157  cat hosts 
+  158  ansible -i inv all -a "hostname"
+  159  ls
+  160  vi hosts 
+  161  co hosts host
+  162  cp hosts host
+  163  vi host
+  164  cat hosts
+  165  cat host
+  166  vi host
+  167  ansible -i host all -a "hostname"
+  168  ansible -i host all -a "reboot"
+  169  reboot
+  170  ansible -i host all -a "hostname"
+  171  cd openshift/
+  172  ls
+  173  cd installcentos/
+  174  ls
+  175  ansible -i host all -a "hostname"
+  176  ssh 10.154.129.144
+  177  ansible -i host all -a "uptime"
+  178  cat hosts
+  179  ansible -i host all -a "uptime"
+  180  ansible -i hosts all -a "uptime"
+  181  vi hosts 
+  182  ansible -i hosts all -a "uptime"
+  183  vi hosts 
+  184  ansible -i hosts all -a "uptime"
+  185  cd openshift/
+  186  ls
+  187  cd installcentos/
+  188  ls
+  189  ansible -i hosts all -a "uptime"
+  190  ssh-copy-id ocpbastion01
+  191  ansible -i hosts all -a "uptime"
+  192  ssh ocpbastion01
+  193  ansible -i hosts all -a "uptime"
+  194  nslookup ocpbastion.dcra.lab
+  195  nslookup ocpbastion
+  196  ls
+  197  vi hosts 
+  198  ansible -i hosts all -a "uptime"
+  199  ls
+  200  cat inventory.ini.good
+  201  ls
+  202  cat install-openshift.sh 
+  203  screen
+  204  yum install screen
+  205  screen
+  206  ssh ocpbast01
+  207  screen -ls
+  208  screen -r 2217.pts-0.ocpbastion01
+  209  cd openshift/
+  210  ls
+  211  cd installcentos/
+  212  ls
+  213  cat install-openshift.sh 
+  214  htpasswd -b /etc/origin/master/htpasswd root HPinvent
+  215  cat /etc/origin/master/htpasswd
+  216  ls /etc/origin/master/htpasswd
+  217  ssh ocpmaster01
+  218  ssh ocpmaster02
+  219  ssh ocpmaster03
+  220  ssh ocpmaster01
+  221  yum provides */ldapsearch
+  222  yum install openldap-clients
+  223  yum provides */ldapsearch
+  224  ldapsearch -LLL -H ldaps://ldap.app.pmi:636 -x -D 'PMI\a-svasu' -W -b 'DC=PMINTL,DC=NET' -x '(&(objectClass=user) (sAMAccountName=s-ibmhmc))'
+  225  ping ldap.app.pmi
+  226  ldapsearch -LLL -H ldaps://ldap.app.pmi:636 -x -D 'PMI\a-svasu' -W -b 'DC=PMINTL,DC=NET' -x '(&(objectClass=user) (sAMAccountName=s-ibmhmc))'
+  227  ldapsearch -LLL -H ldaps://ldap.app.pmi:636 -x -D 'PMINTL.NET\a-svasu' -W -b 'DC=PMINTL,DC=NET' -x '(&(objectClass=user) (sAMAccountName=s-ibmhmc))'
+  228  ping pmintl.net
+  229  ssh ocpmaster01
+  230  ls
+  231  oc login
+  232  wget https://github.com/openshift/origin/releases/download/v3.9.0/openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz
+  233  ls
+  234  tar -zxvf openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz
+  235  ls
+  236  cd openshift-origin-client-tools-v3.9.0-191fece-linux-64bit
+  237  ls
+  238  ln -s $(pwd)/oc /usr/bin/oc
+  239  cd ..
+  240  oc login
+  241  oc login https://ocpbastion01:8443
+  242  oc login https://console.ocpbastion01:8443
+  243  oc login https://console.10.154.129.143.nip.io:8443
+  244  ssh ocpmaster01
+  245  ls
+  246  cat /etc/profile
+  247  vi noproxy.sh
+  248  sh noproxy.sh 
+  249  oc login https://console.10.154.129.143.nip.io:8443
+  250  echo $http_proxy
+  251  cat noproxy.sh 
+  252  unset HTTP_PROXY
+  253  unset HTTPS_PROXY
+  254  unset FTP_PROXY
+  255  unset RSYNC_PROXY
+  256  unset http_proxy
+  257  unset https_proxy
+  258  oc login https://console.10.154.129.143.nip.io:8443
+  259  oc get nodes
+  260  LS
+  261  ls
+  262  vi hosts
+  263  ls
+  264  cat hosts
+  265  ssh ocpmaster04.dcra.lab
+  266  ssh 10.154.129.145
+  267  ssh-copy-id 10.154.129.145
+  268  ssh 10.154.129.145
+  269  ls
+  270  cat install-openshift.sh 
+  271  net-tools
+  272  oc login
+  273  oc get nodes
+  274  oc get pods
+  275  oc get projects
+  276  ip a
+  277  oc get projects
+  278  oc get nodes
+  279  ls
+  280  oc get projects
+  281  oc project myfirstproject
+  282  oc get services
+  283  oc get pods
+  284  docker ps
+  285  kubectl get pods --all-namespaces
+  286  oc get pods --all-namespaces
+  287  oc get pods
+  288  oc get pods --all-namespaces
+  289  oc get pods --all-namespaces -w
+  290  oc get nodes
+  291  oc get masters
+  292  oc get master
+  293  oc get
+  294  oc get deployments
+  295  oc get endpoints
+  296  oc get services
+  297  ssh 172.30.239.221
+  298  ping 172.30.239.221
+  299  oc describe pods
+  300  oc describe pod myfirstphpapplication-1-build
+  301  clear
+  302  oc describe pod myfirstphpapplication-1-build
+  303  oc get pods
+  304  oc describe pod myfirstapacheproject-1-m8dbr
+  305  oc get pods
+  306  oc describe pod myfirstphpapplication-1-bdd5n
+  307  ls
+  308  ls ../
+  309  ls ../openshift-ansible/
+  310  oc describe projects
+  311  oc describe project myfirstproject
+  312  oc get container
+  313  oc get containers
+  314  oc get images
+  315  oadm 
+  316  oc adm
+  317  oc adm registry 
+  318  oc adm registry --help
+  319  oc adm manage-node ocpapp01
+  320  oc adm manage-node ocpapp01 --list-pods
+  321  cat hosts
+  322  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  323  oc adm manage-node ocpapp02.dcra.lab --list-pods
+  324  oc adm manage-node ocpinfra02.dcra.lab --list-pods
+  325  oc adm manage-nodes
+  326  oc adm manage-node
+  327  oc adm manage-node --list-pods
+  328  oc adm manage-node ocpmaster01 --list-pods
+  329  oc adm manage-node ocpmaster01.dcra.lab --list-pods
+  330  oc adm manage-node ocpmaster01.dcra.lab 
+  331  oc adm manage-node
+  332  oc adm manage-node --list-pods
+  333  oc adm manage-node ocpapp02.dcra.lab --list-pods
+  334  oc adm manage-node ocpapp03.dcra.lab --list-pods
+  335  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  336  oc adm manage-node ocpapp01.dcra.lab 
+  337  oc adm manage-node ocpapp01.dcra.lab --schedulable=false
+  338  oc get nodes
+  339  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  340  oc adm manage-node ocpapp01.dcra.lab --evacuate --dry-run
+  341  oc adm drain ocpapp01.dcra.lab --dry-run
+  342  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  343  oc adm drain ocpapp01.dcra.lab
+  344  oc adm drain ocpapp01.dcra.lab --delete-local-data
+  345  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  346  oc get pods
+  347  oc adm manage-nodes
+  348  oc adm manage-node
+  349  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  350  oc adm manage-node ocpapp02.dcra.lab --list-pods
+  351  oc adm manage-node ocpapp03.dcra.lab --list-pods
+  352  oc get pods
+  353  oc adm manage-node ocpapp03.dcra.lab --list-pods
+  354  oc adm
+  355  oc adm manage-node
+  356  oc get nodes
+  357  oc adm manage-node ocpapp01.dcra.lab --schedulable=true
+  358  oc get nodes
+  359  oc adm manage-nodes 
+  360  oc adm manage-node 
+  361  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  362  oc adm manage-node ocpapp02.dcra.lab --list-pods
+  363  oc adm manage-node ocpapp03.dcra.lab --list-pods
+  364  ssh ocpmaster04
+  365  ssh ocpmaster03
+  366  ssh ocpmaster04
+  367  ssh ocpbast01
+  368  oc get pv
+  369  oc get node ocpmaster04.dcra.lab
+  370  oc get nodes
+  371  ls
+  372  df -hP
+  373  pvs
+  374  fdisk -l
+  375  fdisk /dev/sdb
+  376  fdisk /dev/sda
+  377  pvcreate /dev/sda2 
+  378  pvcreate /dev/sda3
+  379  fdisk /dev/sda
+  380  pvcreate /dev/sda3
+  381  partprobe 
+  382  pvcreate /dev/sda3
+  383  pvs
+  384  vgcreate vg_nfs /dev/sda3
+  385  vgs
+  386  lvcreate -L100%VG -n lv_nfs vg_nfs
+  387  lvcreate -L 100%VG -n lv_nfs vg_nfs
+  388  lvcreate -L+100%VG -n lv_nfs vg_nfs
+  389  lvcreate -l100%VG -n lv_nfs vg_nfs
+  390  lvs
+  391  mkfs.xfs /dev/vg_nfs/lv_nfs 
+  392  ls /dev/mapper/vg_nfs-lv_nfs 
+  393  mkdir /nfs
+  394  vi /etc/fstab 
+  395  df -hP
+  396  mount -a
+  397  df -hP
+  398  vi /etc/exports 
+  399  exportfs -a
+  400  yum install nfs
+  401  yum install nfs-utils
+  402  exportfs -a
+  403  exportfs 
+  404  systemctl status nfs
+  405  systemctl start nfs
+  406  systemctl enable nfs
+  407  systemctl status nfs
+  408  exportfs -ar
+  409  exportfs 
+  410  ls
+  411  vi nfs-pv.yaml
+  412  ls /nfs/
+  413  df -hP 
+  414  vi nfs-pv.yaml
+  415  ip a
+  416  vi nfs-pv.yaml
+  417  oc create
+  418  oc create -f nfs-pv.yaml 
+  419  oc get pv
+  420  vi nfs-claim.yaml
+  421  oc create -f nfs-claim.yaml
+  422  oc get pv
+  423  oc get pvc
+  424  cat nfs-claim.yaml 
+  425  df -hP
+  426  ansible all -a "df -hP"
+  427  ansible all -a "df -hP /nfs"
+  428  history 
+  429  cat nfs-pv.yaml
+  430  ls
+  431  vi pvc_pod.yaml
+  432  oc get pvc
+  433  vi pvc_pod.yaml
+  434  oc create -f pvc_pod.yaml 
+  435  oc project
+  436  oc gte pods
+  437  oc get pods
+  438  ansible all -a "df -hP /nfs"
+  439  ansible all -a "df -hP "
+  440  oc get pods
+  441  oc delete pod mypod
+  442  oc get pods
+  443  ansible all -a df -hP '
+  444  ansible all -a 'df -hP|grep nfs '
+  445  ansible all -a 'df -hP\|grep nfs '
+  446  ansible all -a 'df -hP nfs '
+  447  ansible all -a 'df -hP'
+  448  oc get pods
+  449  ls
+  450  cat pvc_pod.yaml
+  451  vi pvc_pod.yaml
+  452  oc create -f pvc_pod.yaml 
+  453  oc get pods
+  454  oc delete pod mypod
+  455  oc get pods
+  456  cat pvc_pod.yaml 
+  457  ls
+  458  vi inv
+  459  ping ocpapp04.dcra.lab
+  460  ssh 10.154.129.148
+  461  vi hosts
+  462  ssh ocpapp04.dcra.lab
+  463  ssh-copy-id ocpapp04.dcra.lab
+  464  ssh ocpapp04.dcra.lab
+  465  ls
+  466  ansible-playbook --limit ocpmaster04.dcra.lab install-openshift.yaml
+  467  ansible-playbook --limit=ocpmaster04.dcra.lab install-openshift.yaml
+  468  ansible-playbook --limit ocpmaster04.dcra.lab install-openshift.yaml
+  469  ansible-playbook -i inv --limit ocpmaster04.dcra.lab install-openshift.yaml
+  470  ansible-playbook --limit ocpmaster04.dcra.lab install-openshift.yaml
+  471  ansible-playbook --limit=ocpmaster04.dcra.lab install-openshift.yaml
+  472  history |grep limit
+  473  ansible-playbook --limit ocpapp04.dcra.lab install-openshift.yaml
+  474  ls
+  475  mv install-openshift.yaml install-pre-openshift.yaml
+  476  ls
+  477  cat install-pre-openshift.yaml
+  478  vi install-pre-openshift.yaml
+  479  oc get nodes
+  480  ls
+  481  cat inv
+  482  git status
+  483  git add .
+  484  git add --all
+  485  git status
+  486  git commit -m "PV/PVC, Add new app node"
+  487  git push
+  488  oc get nodes
+  489  oc get nodes --name-space
+  490  oc get nodes 
+  491  oc get projects
+  492  oc get nodes 
+  493  oc adm --manage-node
+  494  oc adm manage-node
+  495  oc adm manage-node all --list-pods
+  496  oc adm manage-node ocpapp04.dcra.lab --list-pods
+  497  oc drain
+  498  oc dadm drain
+  499  oc adm drain
+  500  #oc adm drain ocpapp01.dcra.lab
+  501  oc adm manage-node 
+  502  oc adm manage-node ocpapp01.dcra.lab --schedulable=false
+  503  oc adm drain ocpapp01.dcra.lab
+  504  oc adm manage-node ocpapp04.dcra.lab --list-pods
+  505  oc adm manage-node ocpapp01.dcra.lab --list-pods
+  506  oc adm manage-node ocpapp04.dcra.lab --list-pods
+  507  oc adm manage-node ocpapp02.dcra.lab --schedulable=false
+  508  oc adm drain ocpapp02.dcra.lab
+  509  oc adm manage-node ocpapp04.dcra.lab --list-pods
+  510  oc get nodes
+  511  oc adm manage-node ocpapp04.dcra.lab --list-pods
+  512  oc adm manage-node ocpapp03.dcra.lab --list-pods
+  513  oc adm manage-node ocpapp02.dcra.lab --schedulable=true
+  514  oc adm manage-node ocpapp01.dcra.lab --schedulable=true
+  515  oc get nodes
+  516  df -hP
+  517  ls -ld /nsf
+  518  ls -ld /nfs/
+  519  ls /nfs/
+  520  ls -a /nfs/
+  521  chmod 777 /nfs/
+  522  ls -ld /nfs/
+  523  ls
+  524  cat pvc_pod.yaml
+  525  oc create -f pvc_pod.yaml
+  526  oc get pods
+  527  oc delete pod mypod
+  528  oc get pods
+  529  vi pvc_pod.yaml 
+  530  oc get pods
+  531  oc create -f pvc_pod.yaml
+  532  oc get pods
+  533  oc delete pod mypod
+  534  oc get pods
+  535  vi pvc_pod.yaml 
+  536  oc get pvs
+  537  oc get pvc
+  538  vi pvc_pod.yaml 
+  539  oc create -f pvc_pod.yaml
+  540  oc get pods
+  541  oc get pods -w
+  542  oc delete pod nginx-nfs-pod
+  543  oc get pods 
+  544  ls
+  545  curl https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/jenkins-persistent-template.json
+  546  oc create -f https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/jenkins-persistent-template.json
+  547  og get pods
+  548  oc get pods
+  549  curl https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/jenkins-persistent-template.json
+  550  ls
+  551  curl https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/jenkins-persistent-template.json > jenkins_persistant.json
+  552  ls
+  553  cat jenkins_persistant.json 
+  554  oc create -f jenkins_persistant.json 
+  555  oc get pods
+  556  oc get images
+  557  oc get images|grep -i jenkins
+  558  oc deploy
+  559  oc build
+  560  oc new-app
+  561  oc new-app --template=openshift/jenkins-2-centos7
+  562  oc new-app -S --template=openshift/jenkins-2-centos7
+  563  oc new-app -S --template=jenkins-2-centos7
+  564  oc new-app -S --template=jenkins
+  565  oc new-app -S --template=jenkins-persistent
+  566  clear
+  567  oc new-app -S --template=jenkins-persistent
+  568  oc create pvs
+  569  oc create pvc
+  570  oc pvc
+  571  cat pvc_pod.yaml 
+  572  cat nfs-claim.yaml 
+  573  vi nfs-claim.yaml 
+  574  oc create nfs-claim.yaml 
+  575  oc create -f nfs-claim.yaml 
+  576  oc new-app -S --template=jenkins-persistent
+  577  oc new-app -S --template=jenkins-persistent --help
+  578  oc new-app -S --template=jenkins-persistent --help|grep -i persist
+  579  vi nfs-claim.yaml 
+  580  oc create -f nfs-claim.yaml 
+  581  oc new-app -S --template=jenkins-persistent
+  582  oc get pvs
+  583  oc get pvc
+  584  oc delete pvc nfs-claim2
+  585  oc get pvc
+  586  oc delete pvc nfs-claim1
+  587  oc get pvc
+  588  oc delete pvc jenkins-persistent
+  589  oc get pvc
+  590  oc create -f nfs-claim.yaml 
+  591  oc get pvc
+  592  oc new-app -S --template=jenkins-persistent
+  593  oc get pvc
+  594  oc new-app -S --template=jenkins-persistent
+  595  oc new-app -S --template=jenkins-persisten
+  596  oc new-app -S --template=jenkins-persistenfff
+  597  oc new-app -S --template=jenkins-persistent
+  598  oc get pvc
+  599  oc delete pvs jenkins-
+  600  oc delete pvc jenkins-
+  601  oc delete pvc jenkins-persistent
+  602  oc get pvc
+  603  oc get pv
+  604  ssh ocpm01vm
+  605  oc get pv
+  606  vi nfs-pv.yaml 
+  607  oc create -d nfs-pv.yaml 
+  608  oc create -f nfs-pv.yaml 
+  609  oc pv
+  610  oc get pv
+  611  oc project
+  612  oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-hello-world.git
+  613  oc status
+  614  oc get pods
+  615  oc new-app nginx
+  616* oc delete 
+  617  oc get pods
+  618  oc status
+  619  oc status -v
+  620  oc set probe pod/nginx-1-deploy --liveness
+  621  oc status -v
+  622  oc status 
+  623  oc get pods
+  624  oc expose service nginx
+  625  oc get pods
+  626  oc volume dc/nginx --add --claim-size 512M --mount-path /usr/share/nginx/html --name downloads
+  627  oc get pvc
+  628  oc get pv
+  629  oc get pvc
+  630  oc get pods
+  631  oc get pv
+  632  oc get pvc
+  633  oc volume dc --all
+  634  oc get pods
+  635  oc scale dc/nginx --replicas 3
+  636  oc get pods
+  637  oc scale dc/nginx --replicas 0
+  638  oc get pods
+  639  oc get pvc
+  640  oc get pv
+  641  pc delete pvc pvc-wprvv
+  642  oc delete pvc pvc-wprvv
+  643  oc get pvc
+  644  oc get pv
+  645  oc get pods
+  646  oc delete pod nginx-2-deploy
+  647  oc get pods
+  648  oc volume
+  649  oc volume -h
+  650  oc get pods
+  651  oc volume ruby-hello-world-1-nbn85 --add --claim-size 512M --name ruby-hello-world
+  652  oc volume ruby-hello-world-1-nbn85 --add --claim-size 512M --all --name ruby-hello-world
+  653  oc volume ruby-hello-world-1-nbn85 --add --claim-size 512M --all --name ruby
+  654  oc volume ruby --add --claim-size 512M --all --name ruby-hello-world
+  655  oc volume dc --all
+  656  oc volume deploymentconfigs/ruby-hello-world --add --claim-size 512M --name ruby-hello-world
+  657  oc get pv
+  658  oc get pvc
+  659  oc get pods
+  660  ansible all -a "df -hP"
+  661  oc get pvc
+  662  oc volume dc/ruby --remove
+  663  oc volume dc/ruby --remove --confirm
+  664  oc volume dc/ruby-hello-world --remove
+  665  oc volume dc/ruby-hello-world --remove --confirm
+  666  oc get pods
+  667  oc get pvs
+  668  oc get pvc
+  669  oc get pv
+  670  ococ volume dc --all
+  671  oc volume dc --all
+  672  oc volume dc/nginx --remove --confirm
+  673  oc volume dc --all
+  674  oc get pvc
+  675  oc get pv
+  676  oc delete pvc pvc-zx257
+  677  oc get pv
+  678  oc get pvc
+  679  oc get pv
+  680  oc delete pv pv0001
+  681  oc get pv
+  682  cat nfs-pv.yaml 
+  683  oc create pv 
+  684  oc create pv -v
+  685  cat nfs-pv.yaml 
+  686  vi nfs-pv.yaml 
+  687  oc create -f nfs-pv.yaml 
+  688  oc pv
+  689  oc get pv
+  690  vi nfs-pv.yaml 
+  691  oc create -f nfs-pv.yaml 
+  692  vi nfs-pv.yaml 
+  693  oc create -f nfs-pv.yaml 
+  694  vi nfs-pv.yaml 
+  695  oc create -f nfs-pv.yaml 
+  696  vi nfs-pv.yaml 
+  697  oc create -f nfs-pv.yaml 
+  698  oc get pvc
+  699  oc get pv
+  700  vi nfs-pv.yaml 
+  701  oc create -f nfs-pv.yaml 
+  702  oc get pv
+  703  oc get pvc
+  704  oc get pv
+  705  df
+  706  oc get pv
+  707  ls
+  708  cat nfs-pv.yaml 
+  709  ansible all -a "df -hP"
+  710  oc get pods
+  711  oc volume 
+  712  oc get pods
+  713  oc volume dc/ruby-hello-world-3-djdj2 --add --size=512M 
+  714  history |grep -i volume
+  715  oc volume dc/ruby-hello-world-3-djdj2 --add --claim-size 512M --name ruby-hello-world
+  716  oc get pods
+  717  oc volumes
+  718  oc volumes --all
+  719  oc get volumes --all
+  720  history 
+  721  oc 
+  722  oc volume dc --all
+  723  ls
+  724  history >> commands
