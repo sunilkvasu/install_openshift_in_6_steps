@@ -38,9 +38,13 @@ STEP-2 Enable ssh key authentication:
 =====================================
 On ocpbastion01.example.com
 
+Generate key:
+
 ssh-keygen
 
-ssh-copy-id <all_hosts>
+Copy the keys:
+
+for host in `ansible -i inv all --list-hosts|grep -vw "hosts"`;do ssh-copy-id $host;done
   
 
 STEP-3 Install and configure HAProxy:
