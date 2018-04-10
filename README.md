@@ -1,63 +1,65 @@
 3 Master 2 Infra 3 app node installation:
+=========================================
 
-Requirements:
+
+STEP-1 Preparations:
+====================
 
 Bastion Node
-
 ocpbastion01.example.com, 4 CPU, 4GB RAM, 50GB Disk
 
-
 Master Nodes
-
 ocpmaster01.example.com, 4 CPU, 8GB RAM, 50GB Disk
-
 ocpmaster02.example.com, 4 CPU, 8GB RAM, 50GB Disk
-
 ocpmaster03.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
-
 Infra Nodes
-
 ocpinfra01.example.com, 4 CPU, 8GB RAM, 50GB Disk
-
 ocpinfra02.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
-
 Application Nodes
-
 ocpapp01.example.com, 4 CPU, 16GB RAM, 50GB Disk
-
+ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
 ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
 
-ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
 
-
-
-Configure passwordless authnetication:
-
+STEP-2 Enable ssh key authentication:
+=====================================
 On ocpbastion01.example.com
-
 ssh-keygen
-
 ssh-copy-id <hosts>
   
-  
-  Run the playbooks on ocpbastion01.example.com:
 
---> Use Inventory file "inv"
+STEP-3 Install and configure HAProxy:
+=====================================
+Login to ocpbastion01.example.com
+Use Inventory file "inv" and run playbook "configure_haproxy.yaml"
 
---> Configure HA Proxy on the bastion node: run configure_haproxy.yaml playbook
 
---> run pre install playbook "install-pre-openshift.yaml" for all hosts in the inventory
+STEP-4 Install pre-requisites:
+==============================
+Login to ocpbastion01.example.com
+Use Inventory file "inv" and run playbook "install-pre-openshift.yaml"
 
---> Clone openshift repository: git clone https://github.com/openshift/openshift-ansible.git
+STEP-5 Clone OpenShift repository and run config playbook:
+==========================================================
+Login to ocpbastion01.example.com
 
---> Checkout release: cd openshift-ansible && git fetch && git checkout release-3.7 && cd ..
+Clone openshift repository:
+git clone https://github.com/openshift/openshift-ansible.git
 
---> run config playbook "openshift-ansible/playbooks/byo/config.yml" using the inventory file
+Checkout release:
+cd openshift-ansible && git fetch && git checkout release-3.7 && cd ..
 
---> Execute "htpasswd -b /etc/origin/master/htpasswd <USERNAME> <PASSWORD>"
+Use Inventory file "inv" and run config playbook "openshift-ansible/playbooks/byo/config.yml"
 
---> Execute "oc adm policy add-cluster-role-to-user cluster-admin <USERNAME>"
+STEP-6 Post configuration:
+==========================
+Create htpasswd user:
+htpasswd -b /etc/origin/master/htpasswd <USERNAME> <PASSWORD>
 
---> To login "oc login -u <USERNAME> -p <PASSWORD> https://console.$DOMAIN:$API_PORT"
+Add admin role to the user:
+oc adm policy add-cluster-role-to-user cluster-admin <USERNAME>
+
+Login to the OpenShift container platform:
+oc login -u <USERNAME> -p <PASSWORD> https://console.$DOMAIN:$API_PORT
