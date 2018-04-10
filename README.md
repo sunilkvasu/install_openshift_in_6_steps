@@ -20,18 +20,18 @@ ocpmaster03.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
 Infra Nodes
 
-ocpinfra01.example.com, 4 CPU, 8GB RAM, 50GB Disk
+ocpinfra01.example.com, 4 CPU, 16GB RAM, 50GB Disk
 
-ocpinfra02.example.com, 4 CPU, 8GB RAM, 50GB Disk
+ocpinfra02.example.com, 4 CPU, 16GB RAM, 50GB Disk
 
 
 Application Nodes
 
-ocpapp01.example.com, 4 CPU, 16GB RAM, 50GB Disk
+ocpapp01.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
-ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
+ocpapp03.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
-ocpapp03.example.com, 4 CPU, 16GB RAM, 50GB Disk
+ocpapp03.example.com, 4 CPU, 8GB RAM, 50GB Disk
 
 
 STEP-2 Enable ssh key authentication:
