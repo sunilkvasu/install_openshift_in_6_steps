@@ -40,7 +40,7 @@ On ocpbastion01.example.com
 
 ssh-keygen
 
-ssh-copy-id <hosts>
+ssh-copy-id <all_hosts>
   
 
 STEP-3 Install and configure HAProxy:
@@ -49,12 +49,16 @@ Login to ocpbastion01.example.com
 
 Use Inventory file "inv" and run playbook "configure_haproxy.yaml"
 
+ansible-playbook -i inv configure_haproxy.yaml
+
 
 STEP-4 Install pre-requisites:
 ==============================
 Login to ocpbastion01.example.com
 
 Use Inventory file "inv" and run playbook "install-pre-openshift.yaml"
+
+ansible-playbook -i inv install-pre-openshift.yaml
 
 STEP-5 Clone OpenShift repository and run config playbook:
 ==========================================================
@@ -69,6 +73,8 @@ Checkout release:
 cd openshift-ansible && git fetch && git checkout release-3.7 && cd ..
 
 Use Inventory file "inv" and run config playbook "openshift-ansible/playbooks/byo/config.yml"
+
+ansible-playbook -i inv openshift-ansible/playbooks/byo/config.yml
 
 STEP-6 Post configuration:
 ==========================
