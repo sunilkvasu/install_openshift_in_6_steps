@@ -62,7 +62,7 @@ openshift_metrics_image_version=v3.7.1
 #openshift_logging_image_version=v3.7.1
 
 osm_use_cockpit=true
-osm_cluster_network_cidr=10.1.0.0/16
+osm_cluster_network_cidr=<10.1.0.0/16>
 openshift_http_proxy=http://<PROXY_SERVER>:PORT
 openshift_https_proxy=http://<PROXY_SERVER>:PORT
 openshift_no_proxy='.example.com,.local,10.0.2.' 
