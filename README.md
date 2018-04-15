@@ -1,4 +1,4 @@
-3 Master 2 Infra 3 app node installation:
+3 Master, 2 Infra, 3 app nodes installation:
 =========================================
 
 
