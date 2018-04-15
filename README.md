@@ -84,12 +84,12 @@ STEP-6 Post configuration:
 ==========================
 Create htpasswd user:
 
-htpasswd -b /etc/origin/master/htpasswd /<USERNAME/> /<PASSWORD/>
+htpasswd -b /etc/origin/master/htpasswd USERNAME PASSWORD
 
 Add admin role to the user:
 
-oc adm policy add-cluster-role-to-user cluster-admin /<USERNAME/>
+oc adm policy add-cluster-role-to-user cluster-admin USERNAME
 
 Login to the OpenShift container platform:
 
-oc login -u /<USERNAME/> -p /<PASSWORD/> https://console.$DOMAIN:$API_PORT
+oc login -u USERNAME -p PASSWORD https://console.$DOMAIN:$API_PORT
