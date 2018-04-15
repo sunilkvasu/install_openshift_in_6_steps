@@ -37,7 +37,6 @@
     yum:
       name: ansible
       state: latest
-    #shell: 'pip install -Iv ansible'
   - name: Restart Docker
     service:
       name: docker
