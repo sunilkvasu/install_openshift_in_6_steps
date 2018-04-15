@@ -32,7 +32,7 @@ ocpapp03.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node
 
 [new_nodes]
 #ocpmaster04.example.com
-ocpapp04.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+#ocpapp04.example.com openshift_ip=<IP> openshift_schedulable=true openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
 
 [bastion_node]
 ocpbastion01.example.com
