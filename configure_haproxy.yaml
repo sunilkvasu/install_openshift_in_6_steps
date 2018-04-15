@@ -1,5 +1,5 @@
 ---
-- name: Configure HA Proxy on Bastion host
+- name: Configure HA Proxy on Bastion host, Skip this if you already have a load balancer setup
   hosts: bastion_node
   vars:
   tasks:
