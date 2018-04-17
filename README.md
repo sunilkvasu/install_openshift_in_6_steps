@@ -1,3 +1,7 @@
+This repository contains playbooks to install minimal OpenShift cluster.
+
+
+
 3 Masters, 2 Infra and 3 app nodes installation:
 =========================================
 
